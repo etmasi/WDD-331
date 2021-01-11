@@ -1,65 +1,117 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('normalize.css');
+
 body{
 
-    font-family:Helvetica, Arial, sans-serif;
-    color:#6495ED;
-    background:#FAEBD7 ;
+font-family:Helvetica, Arial, sans-serif;
+color:#6495ED;
+background:#FAEBD7 ;
+
 
 }
 
 main{
-
     background:#FAEBD7 ;
 }
 
-header h1 a {
 
 
+header {
     color:#FAEBD7 ;
+    background-color: #6495ED;
+    padding: 55px 15px;
+    text-align: right;
+   
+}
+ 
+h1 a{
+    color: white;
+    text-decoration: none;
+    font-family: Lora;
+    font-weight: 100;
+}
+
+header li{
+ margin-top: 20px;
 
 }
+
 li  a:link {
-        color: #FAEBD7;
-      }
-      
-      /* visited link */
-  li   a:visited {
-        color: #FAEBD7 ;
-      }
-      
-      /* mouse over link */
-   li   a:hover {
-        color: white;
-        text-decoration: underline;
-      }
-      
-      /* selected link */
-   li   a:active {
-        color:#DEB887;
-      }
+    color: #FAEBD7;
+    text-decoration: none;
+    
+}
 
-    article  a:link {
-        color:#6495ED  ;
-      }
-      
-      /* visited link */
-  article   a:visited {
-        color: #6495ED  ;
-      }
-      
-      /* mouse over link */
-   article a:hover {
-       color:#6495ED ;
-        text-decoration: underline;
-      }
-      
-      /* selected link */
-   article  a:active {
-        color:#DEB887;
-      }
+/* visited link */
+li   a:visited {
+    color: #FAEBD7 ;
+}
+
+/* mouse over link */
+li   a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* selected link */
+li   a:active {
+    color:#DEB887;
+}
+
+article  a {
+    color:black;
+    text-decoration: none;
+}
+
+/* visited link */
+article   a:visited {
+    color: black  ;
+}
+
+/* mouse over link */
+article a:hover {
+    color:#6495ED ;
+    text-decoration: underline;
+}
+
+/* selected link */
+article  a:active {
+color:#DEB887;
+}
+
+
+
+
+article{
+
+    background-color: white;
+    margin:20px;
+    border-right:solid 5px #dddbd2;
+    border-bottom:solid 5px #dddbd2;
+    padding:30px;
+    color: black;
+
+} 
+
+img{
+
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    width:50%;
+}
+
+@media only screen and (min-width: 720px) {
 
     
-
-
     
+    body > div{
+    
+        display: grid;
+        grid-template-columns:minmax(200px,350px) auto;
+    }
+}
 
 
