@@ -1,0 +1,65 @@
+body{
+
+    font-family:Helvetica, Arial, sans-serif;
+    color:#6495ED;
+    background:#FAEBD7 ;
+
+}
+
+main{
+
+    background:#FAEBD7 ;
+}
+
+header h1 a {
+
+
+    color:#FAEBD7 ;
+
+}
+li  a:link {
+        color: #FAEBD7;
+      }
+      
+      /* visited link */
+  li   a:visited {
+        color: #FAEBD7 ;
+      }
+      
+      /* mouse over link */
+   li   a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      
+      /* selected link */
+   li   a:active {
+        color:#DEB887;
+      }
+
+    article  a:link {
+        color:#6495ED  ;
+      }
+      
+      /* visited link */
+  article   a:visited {
+        color: #6495ED  ;
+      }
+      
+      /* mouse over link */
+   article a:hover {
+       color:#6495ED ;
+        text-decoration: underline;
+      }
+      
+      /* selected link */
+   article  a:active {
+        color:#DEB887;
+      }
+
+    
+
+
+    
+
+
