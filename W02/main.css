@@ -1,3 +1,16 @@
 .help::before {
-    content: "hello";
+    content: "(";
+}
+
+.help::after {
+    content: ")";
+}
+
+fieldset p {
+    display: none;
+}
+
+fieldset p:nth-child(1),
+fieldset p:nth-child(2) {
+    display: block;
 }
