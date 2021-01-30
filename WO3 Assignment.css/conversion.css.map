@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AACI,IADA,CACA,EAAE,CAAC;EACC,KAAK,EAHC,OAAiB;CAI1B;;AAHL,AAII,IAJA,CAIA,GAAG,CAAC;EACA,UAAU,EANJ,OAAiB;CAO1B",
+    "sources": [
+        "conversion.scss"
+    ],
+    "names": [],
+    "file": "conversion.css"
+}
