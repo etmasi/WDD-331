@@ -1,9 +1,65 @@
 //  I will be adding at least 4 css variables.
 //colors
+//Define mixin
+$break-small: 400px;
+$break-medium: 500px;
+$break-large: 600px;
+@mixin breakpoint($break) {
+    @if $break==large {
+        @media (min-width: $break-large) {
+            @content;
+        }
+    }
+    @else if $break==medium {
+        @media (min-width: $break-medium) {
+            @content;
+        }
+    }
+    @else if $break==small {
+        @media (min-width: $break-small) {
+            @content;
+        }
+    }
+    @else {
+        @media ($break) {
+            @content;
+        }
+    }
+}
+
 $body-background-color: darkred;
-$form-background-color: white;
+$form-background-color: #d6bb81;
 $input-color: white;
 $headlines-color: white;
 body {
-    background-color: $body-background-color;
+    background-color: $body-background-color
+}
+
+#contactform {
+    background-color: $form-background-color;
+    input,
+    textarea {
+        background-color: $input-color;
+        flex: 2;
+    }
+    @include breakpoint(small) {
+        width: 70%;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        input,
+        textarea {
+            width: 100%;
+        }
+    }
+    @include breakpoint(large) {
+        width: 70%;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        input,
+        textarea {
+            width: 70%;
+        }
+    }
 }

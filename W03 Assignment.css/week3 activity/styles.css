@@ -1,4 +1,42 @@
 body {
   background-color: darkred;
 }
+
+#contactform {
+  background-color: #d6bb81;
+}
+
+#contactform input,
+#contactform textarea {
+  background-color: white;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+@media (min-width: 400px) {
+  #contactform {
+    width: 70%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #contactform input,
+  #contactform textarea {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  #contactform {
+    width: 70%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #contactform input,
+  #contactform textarea {
+    width: 70%;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
