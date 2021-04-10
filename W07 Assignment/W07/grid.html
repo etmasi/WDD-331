@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<meta charset="utf-8">
+
+<head>
+    <title>L07 - Create Your Own Grid </title>
+</head>
+
+<body>
+    <svg width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-spade" viewBox="0 0 1024 1024">
+                <title>spades</title>
+                <path class="path1" d="M817.57 348.15c-193.566-143.858-260.266-259.018-305.566-348.148v0c-0.004 0-0.004-0.002-0.004-0.002v0.002c-45.296 89.13-112 204.292-305.566 348.148-330.036 245.286-19.376 587.668 253.758 399.224-17.796 116.93-78.53 202.172-140.208 238.882v37.744h384.032v-37.74c-61.682-36.708-122.41-121.954-140.212-238.884 273.136 188.446 583.8-153.94 253.766-399.226z"></path>
+            </symbol>
+            <symbol id="icon-club" viewBox="0 0 1024 1024">
+                <title>clubs</title>
+                <path class="path1" d="M786.832 392.772c-59.032 0-112.086 24.596-149.852 64.694-15.996 16.984-43.762 37.112-73.8 54.81 14.11-53.868 58.676-121.7 89.628-151.456 39.64-38.17 63.984-91.83 63.984-151.5 0.006-114.894-91.476-208.096-204.788-209.32-113.32 1.222-204.796 94.426-204.796 209.318 0 59.672 24.344 113.33 63.986 151.5 30.954 29.756 75.52 97.588 89.628 151.456-30.042-17.7-57.806-37.826-73.8-54.81-37.768-40.098-90.82-64.694-149.85-64.694-114.386 0-207.080 93.664-207.080 209.328 0 115.638 92.692 209.338 207.080 209.338 59.042 0 112.082-25.356 149.85-65.452 16.804-17.872 46.444-40.138 78.292-58.632-3.002 147.692-73.532 256.168-145.318 298.906v37.742h384.014v-37.74c-71.792-42.736-142.32-151.216-145.32-298.906 31.852 18.494 61.488 40.768 78.292 58.632 37.766 40.094 90.808 65.452 149.852 65.452 114.386 0 207.078-93.7 207.078-209.338-0.002-115.664-92.692-209.328-207.080-209.328z"></path>
+            </symbol>
+            <symbol id="icon-diamond" viewBox="0 0 1024 1024">
+                <title>diamonds</title>
+                <path class="path1" d="M512 0l-320 512 320 512 320-512z"></path>
+            </symbol>
+            <symbol id="icon-heart" viewBox="0 0 1024 1024">
+                <title>heart</title>
+                <path class="path1" d="M755.188 64c-107.63 0-200.258 87.554-243.164 179-42.938-91.444-135.578-179-243.216-179-148.382 0-268.808 120.44-268.808 268.832 0 301.846 304.5 380.994 512.022 679.418 196.154-296.576 511.978-387.206 511.978-679.418 0-148.392-120.43-268.832-268.812-268.832z"></path>
+            </symbol>
+            
+            <pattern id="card-pattern-1" class="card-design-1" width="125" height="125" patternUnits="userSpaceOnUse" patternTransform="rotate(45) scale(.221)">
+              <g class="card-shape">
+                <g class="card-lines">
+                  <line class="card-lines-left" x1="76.6" y1="0" x2="76.6" y2="127.9"/>
+                  <line class="card-lines-right" x1="127.4" y1="51.3" x2="0.1" y2="51.3"/>
+                  <line class="card-lines-right" x1="50.6" y1="0" x2="50.6" y2="128"/>
+                  <line class="card-lines-top" x1="127.7" y1="77.3" x2="0" y2="77.3"/>
+                </g>
+                <g class="card-box">
+                  <rect class="card-box-left" x="72.1" y="55.8" transform="matrix(1.491534e-14 1 -1 1.491534e-14 166.4031 -37.8762)" width="60" height="17"/>
+                  <rect class="card-box-bottom" x="33.6" y="17.3" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 127.2792 51.5269)" width="60" height="17"/>
+                  <rect class="card-box-right" x="-4.9" y="55.8" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 89.4031 39.1238)" width="60" height="17"/>
+                  <rect class="card-box-top" x="33.6" y="94.3" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 127.2792 205.5269)" width="60" height="17"/>
+                </g>
+                <rect class="card-diamond" x="55.2" y="55.8" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 63.1985 154.7046)" width="17" height="17"/>
+              </g>
+            </pattern>
+          
+            <pattern id="card-pattern-2" class="card-design-2" width="125" height="125" patternUnits="userSpaceOnUse" patternTransform="scale(.31)">
+              <g class="card-shape">
+                <g class="card-lines">
+                  <line class="card-lines-left" x1="76.6" y1="0" x2="76.6" y2="127.9"/>
+                  <line class="card-lines-right" x1="127.4" y1="51.3" x2="0.1" y2="51.3"/>
+                  <line class="card-lines-right" x1="50.6" y1="0" x2="50.6" y2="128"/>
+                  <line class="card-lines-top" x1="127.7" y1="77.3" x2="0" y2="77.3"/>
+                </g>
+                <g class="card-box">
+                  <rect class="card-box-left" x="72.1" y="55.8" transform="matrix(1.491534e-14 1 -1 1.491534e-14 166.4031 -37.8762)" width="60" height="17"/>
+                  <rect class="card-box-bottom" x="33.6" y="17.3" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 127.2792 51.5269)" width="60" height="17"/>
+                  <rect class="card-box-right" x="-4.9" y="55.8" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 89.4031 39.1238)" width="60" height="17"/>
+                  <rect class="card-box-top" x="33.6" y="94.3" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 127.2792 205.5269)" width="60" height="17"/>
+                </g>
+                <rect class="card-diamond" x="55.2" y="55.8" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 63.1985 154.7046)" width="17" height="17"/>
+              </g>
+            </pattern>
+        </defs>
+    </svg>
+
+    <div class="cards">
+        <div class="card card-design-1">
+            <div class="card-front">
+                <div class="card-icons">
+                    <svg class="card-icon"><use xlink:href="#icon-club"></use></svg>
+                    <svg class="card-icon"><use xlink:href="#icon-club"></use></svg>
+                    <svg class="card-icon"><use xlink:href="#icon-club"></use></svg>
+                    <svg class="card-icon"><use xlink:href="#icon-club"></use></svg>
+                    <svg class="card-icon"><use xlink:href="#icon-club"></use></svg>
+                    <svg class="card-icon"><use xlink:href="#icon-club"></use></svg>
+                    <svg class="card-icon"><use xlink:href="#icon-club"></use></svg>
+                    <!--         <svg class="card-icon"><use xlink:href="#icon-club"></use></svg>
+            <svg class="card-icon"><use xlink:href="#icon-club"></use></svg>
+            <svg class="card-icon"><use xlink:href="#icon-club"></use></svg> -->
+                </div>
+
+                <svg class="card-icon card-corner card-corner-top">
+            <use xlink:href="#icon-club" x="0" y="-18"></use>
+            <text class="card-value" x="9" y="53">7</text> 
+          </svg>
+
+                <svg class="card-icon card-corner card-corner-bottom">
+            <use xlink:href="#icon-club" x="0" y="-18"></use>
+            <text class="card-value" x="9" y="53">7</text> 
+          </svg>
+            </div>
+
+            <div class="card-back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="274" height="374">    
+            <rect x="0" y="0" width="274" height="374" fill="url(#card-pattern-1)" stroke="none" stroke-width=""/>
+          </svg>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

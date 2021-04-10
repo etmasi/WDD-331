@@ -1,0 +1,142 @@
+$blue: #02225B;
+$gold: #C4B699;
+$card-height: 374px;
+@mixin quantity-query( $number, $comparison: 'equal') {
+    $nth: '';
+    @if index( ('less' 'fewer' '<'), $comparison) {
+        $nth: '-n + #{$number}';
+    }
+    @else if index( ('equal' 'same' '='), $comparison) {
+        $nth: $number;
+    }
+    @else {
+        @warn "Invalid $comparison value."
+    }
+    &:nth-last-child(#{$nth}):first-child {
+        &,
+        &~* {
+            @content;
+        }
+    }
+}
+
+body {
+    background-color: #333;
+    padding: 5%;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    border-style: double;
+    border-width: 12px;
+    box-shadow: 1px 2px 2px 0 rgba(#000, .5);
+    display: inline-block;
+    margin: 2%;
+    position: relative;
+    width: 274px;
+    height: $card-height;
+    [class*="card-lines-"] {
+        fill: none;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+    }
+    &-design-1 {
+        border-color: $gold;
+        [class*="card-lines-"] {
+            stroke: $gold;
+        }
+        [class*="card-box"],
+        .card-diamond {
+            fill: $gold;
+        }
+    }
+    &-front {
+        height: $card-height - 27px;
+    }
+    &-back {
+        display: none;
+    }
+    &-icons {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+        justify-content: center;
+        padding: 5%;
+        .card-icon {
+            border: 1px solid #fff;
+            // padding: 10px;
+            height: 47px;
+            // width: 60px;
+            flex: 0 0 35%;
+            &:nth-child(n + 6) {
+                // transform: rotate(180deg);
+            }
+            @include quantity-query(2, equal) {
+                flex: 0 0 100%;
+                &:nth-child(2) {
+                    transform: rotate(180deg);
+                }
+            }
+            @include quantity-query(3, equal) {
+                flex: 0 0 100%;
+                &:nth-child(n + 2) {
+                    transform: rotate(180deg);
+                }
+            }
+            @include quantity-query(4, equal) {
+                &:nth-child(n + 3) {
+                    transform: rotate(180deg);
+                }
+            }
+            @include quantity-query(5, equal) {
+                &:nth-child(3) {
+                    flex: 0 0 100%;
+                }
+                &:nth-child(n + 4) {
+                    transform: rotate(180deg);
+                }
+            }
+            @include quantity-query(7, equal) {
+                &:nth-child(n + 5) {
+                    transform: rotate(180deg);
+                }
+            }
+            @include quantity-query(8, equal) {
+                &:nth-child(n + 5) {
+                    transform: rotate(180deg);
+                }
+            }
+            @include quantity-query(9, equal) {
+                &:nth-child(n + 5) {
+                    transform: rotate(180deg);
+                }
+            }
+            @include quantity-query(10, equal) {
+                &:nth-child(n + 5) {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    &-corner {
+        position: absolute;
+        width: 30px;
+        height: 65px;
+        &-top {
+            top: 10px;
+            left: 10px;
+        }
+        &-bottom {
+            bottom: 10px;
+            right: 10px;
+            transform: rotate(180deg);
+        }
+    }
+    &-value {
+        font-family: Times;
+        font-size: 24px;
+    }
+}
